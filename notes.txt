@@ -1,0 +1,16 @@
+model_description.yaml:
+promjena agregacione funkcije - odraditi to za oba time GNN slojeva, i za variable i factor:
+- type: attention
+
+train_options.yaml
+  type: Adam
+  learning_rate: 0.000403285
+  clipnorm: 1.0
+  clipvalue: 0.5
+
+
+global_variables.yaml
+hidden_state_dim: 256
+N: 6
+
+kada se sve setuje samo pokrenes train.py

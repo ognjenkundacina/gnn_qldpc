@@ -24,12 +24,6 @@ message_passing:
               - type: neural_network
                 input: [source]
                 nn_name: factorToVariable
-          - name: variableNode
-            message:
-              - type: neural_network
-                input: [source]
-                nn_name: variableToVariable
-
         aggregation:
           - type: attention
         update:
