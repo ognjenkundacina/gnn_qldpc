@@ -9,8 +9,8 @@ entities:
   state_dimension: hidden_state_dim
   initial_state:
     - type: build_state
-      input: [$index_encoding, $bit_value] # dodati i lv kasnije mozda
-    
+      input: [$index_encoding] # dodati i lv kasnije mozda
+
 message_passing:
   num_iterations: N
   stages:
@@ -46,21 +46,22 @@ message_passing:
           type: neural_network
           nn_name: updateNN
 
-#readout:
-#- type: neural_network
-#  input: [variableNode]
-#  nn_name: readout_model
-#  output_label: [output_sigm_mu]
-
 readout:
 - type: neural_network
   input: [variableNode]
   nn_name: readout_model
-  output_name: output_sigm_mu
-- type: concat
-  axis: 1
-  input: [output_sigm_mu, $bit_value]
-  output_label: [$bit_value] #izgleda da mora nesto da se definise kao output label
+  output_label: [$bit_value]
+
+
+#readout:
+#- type: neural_network
+#  input: [variableNode]
+#  nn_name: readout_model
+#  output_name: output_sigm_mu
+#- type: concat
+#  axis: 1
+#  input: [output_sigm_mu, $bit_value]
+#  output_label: [$bit_value] #izgleda da mora nesto da se definise kao output label
 
 neural_networks:
 - nn_name: readout_model

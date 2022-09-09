@@ -1,5 +1,5 @@
 hidden_state_dim: 256
-N: 6
+N: 7
 r_l2: 0.0
 r_l2_2: 0.0
 output_units: 1

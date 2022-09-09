@@ -9,18 +9,19 @@ output_path: ./
 additional_functions_file: ./additional_functions.py
 
 # OPTIMIZATION OPTIONS
-loss: CustomLoss
+loss: BinaryCrossentropy
+#loss: CustomLoss
 optimizer:
   type: Adam
   learning_rate: 0.000403285
   clipnorm: 1.0
   clipvalue: 0.5
-metrics: [sum_of_bits]
+metrics: [BinaryAccuracy, Precision, Recall]
 
 
 
 # TRAINING OPTIONS
-batch_size: 1
+batch_size: 32 #1
 epochs: 500
 epoch_size: 4500
 #shuffle_training_set: True

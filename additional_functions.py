@@ -17,7 +17,8 @@ def CustomLoss(y_true, y_pred):
     output_sigm_mu_Vector = tf.expand_dims(y_pred[:, -2], axis=0)
     e = error_bit_values + output_sigm_mu_Vector
     e = tf.transpose(e)
-    e = tf.abs(tf.sin(e * math.pi / 2.0))
+    e = tf.abs(tf.sin(e * math.pi / 8.0))
+    #e=tf.math.floormod(e,2)
 
     #print(error_bit_values.shape)
     #print(output_sigm_mu_Vector.shape)
@@ -41,10 +42,11 @@ def CustomLoss(y_true, y_pred):
     HM = tf.convert_to_tensor(HM, dtype=tf.float32)
 
     result = tf.matmul(HM, e)
-    result = tf.abs(tf.sin(result * math.pi / 2.0))
+    result = tf.abs(tf.sin(result * math.pi / 8.0))
     #tf.print(result, summarize=-1)
 
     result = tf.reduce_sum(result)
+    #result = tf.reduce_sum(result) - tf.reduce_sum(tf.pow(output_sigm_mu_Vector - 0.5, 2))
 
     return result
 
