@@ -12,8 +12,6 @@ def generate_datasets():
 
     error_vectors, syndrom_vectors, H, H_orth, m1, m2, n, lv = read_files(data_dir)
 
-    split_index = 4500
-
     datasetType = "train"
     generate_dataset(datasetType, error_vectors[:split_index], syndrom_vectors[:split_index], H, H_orth, m1, m2, n, lv)
 
