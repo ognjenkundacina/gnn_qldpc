@@ -27,7 +27,7 @@ epoch_size: 5000
 #shuffle_training_set: True
 shuffle_training_set: True
 shuffle_validation_set: False
-val_samples: 500
+val_samples: 1000
 val_frequency: 1
 execute_gpu: False
 batch_norm: mean
