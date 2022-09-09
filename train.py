@@ -1,6 +1,6 @@
 import ignnition
 
-import predict
+from predict_helper import predict
 
 
 #def train():

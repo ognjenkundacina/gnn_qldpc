@@ -4,7 +4,7 @@ train_dataset: ./data/train
 #validation_dataset: ./data/validation
 validation_dataset: ./data/test
 predict_dataset: ./data/test
-#load_model_path: ./CheckPoint/experiment_2022_08_24_19_44_26/ckpt/weights.08-0.329
+#load_model_path: ./CheckPoint/experiment_2022_09_09_15_22_47/ckpt/weights.01-0.013
 output_path: ./
 additional_functions_file: ./additional_functions.py
 
@@ -23,7 +23,7 @@ metrics: [BinaryAccuracy, Precision, Recall]
 # TRAINING OPTIONS
 batch_size: 32 #1
 epochs: 500
-epoch_size: 4500
+epoch_size: 5000
 #shuffle_training_set: True
 shuffle_training_set: True
 shuffle_validation_set: False
